@@ -14,6 +14,7 @@ function Sitenave() {
                         <Nav className='ms-md-auto'>
                             <Nav.Link href='/Login'>Inicio de Sesion</Nav.Link>
                             <Nav.Link href='Registro'>Registro</Nav.Link>
+                            <Nav.Link href='Contactos'>Contacto</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

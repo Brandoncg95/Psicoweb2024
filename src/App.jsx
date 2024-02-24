@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Componentes/Comunes/Home.jsx';
 import Login from './Componentes/auth/Login.jsx';
 import Registro from './Componentes/auth/Registro.jsx';
+import Contactos from './Componentes/Contactos/Contactos.jsx';
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
         <Route path='/' exact={true} element={<Home />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Registro' element={<Registro />} />
+        <Route path='/Contactos' element={<Contactos />} />
         </Routes>
         <SiteFooter />
       </div>
