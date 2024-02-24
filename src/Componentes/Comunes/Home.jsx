@@ -16,7 +16,7 @@ function Home() {
                         fluid />
                 </Col>
                 <Col sm={6}>
-                    <h1 className="font-weight-light">Contacts App</h1>
+                    <h1 className="font-weight-light">Psicoweb </h1>
                     <p className="mt-4">
                         ¿Que es Psicoweb?
                         <br /><br />

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-psicoweb-dev-10116-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654235008:role/amplify-psicoweb-dev-10116-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654235008:role/amplify-psicoweb-dev-10116-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-psicoweb-dev-10116-deployment",
+      "UnauthRoleName": "amplify-psicoweb-dev-10116-unauthRole",
+      "StackName": "amplify-psicoweb-dev-10116",
+      "StackId": "arn:aws:cloudformation:us-east-1:654654235008:stack/amplify-psicoweb-dev-10116/20fdee00-d2da-11ee-a71f-0a0234fec2c9",
+      "AmplifyAppId": "dz9jylowo5o3v"
+    },
+    "categories": {
+      "auth": {
+        "psicoweb13d5d5c1": {}
+      }
+    }
+  }
+}
