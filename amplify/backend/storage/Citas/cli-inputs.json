@@ -1,0 +1,14 @@
+{
+  "resourceName": "Citas",
+  "tableName": "Citas",
+  "partitionKey": {
+    "fieldName": "id_citas",
+    "fieldType": "number"
+  },
+  "sortKey": {
+    "fieldName": "estudianteId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
