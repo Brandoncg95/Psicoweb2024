@@ -1,7 +1,8 @@
-import { Route, Routes, Redirect } from 'react-router-dom';
-import { Amplify, Auth } from 'aws-amplify';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Amplify } from 'aws-amplify';
+import { signOut } from '@aws-amplify/auth';
 import { Authenticator } from '@aws-amplify/ui-react';
-import awsExports from './aws-exports';
+import awsExports from './aws-exports'; // Si la configuración automática no funciona, descomenta esta línea
 import React, { useEffect, useState } from 'react';
 import Sitenave from './Componentes/Comunes/Sitenave.jsx';
 import SiteFooter from './Componentes/Comunes/SiteFooter.jsx';
@@ -13,11 +14,11 @@ import Registro from './Componentes/auth/Registro.jsx';
 import Contactos from './Componentes/Contactos/Contactos.jsx';
 import ListarUsuario from './Componentes/Comunes/ListarUsuario.jsx';
 
-
-Amplify.configure(awsExports);
+// Amplify.configure(awsExports); // Remueve esta línea si la configuración automática funciona
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate(); // Utilize useNavigate hook for redirection
 
   useEffect(() => {
     checkAuthStatus();
@@ -25,8 +26,9 @@ function App() {
 
   async function checkAuthStatus() {
     try {
-      await Auth.currentAuthenticatedUser();
+      await Auth.currentSession(); // Actualización a Amplify 6.0.17
       setIsAuthenticated(true);
+      navigate('/ListarUsuario'); // Redirect upon successful authentication
     } catch (error) {
       setIsAuthenticated(false);
     }
@@ -38,7 +40,7 @@ function App() {
         <div>
           <Sitenave />
           <Routes>
-            <Route path='/' element={isAuthenticated ? <Redirect to='/ListarUsuario' /> : <Home />} />
+            <Route path='/' element={<Home />} /> {/* No conditional rendering here */}
             <Route path='/Login' element={<Login />} />
             <Route path='/Registro' element={<Registro />} />
             <Route path='/Contactos' element={<Contactos />} />
